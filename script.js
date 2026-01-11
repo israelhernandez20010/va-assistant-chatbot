@@ -42,15 +42,24 @@ async function sendMessage() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          { role: "system", content: SYSTEM_PROMPT },
-          { role: "user", content: userText }
-        ],
-        temperature: 0
-      })
-    });
+body: JSON.stringify({
+  model: "gpt-5-nano",
+  input: [
+    {
+      role: "system",
+      content: [
+        { type: "text", text: SYSTEM_PROMPT }
+      ]
+    },
+    {
+      role: "user",
+      content: [
+        { type: "text", text: userText }
+      ]
+    }
+  ]
+})
+
 
     console.log("Response received:", response);
 
@@ -82,3 +91,4 @@ async function sendMessage() {
     `;
   }
 }
+
