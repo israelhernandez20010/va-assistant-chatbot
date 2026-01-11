@@ -12,9 +12,14 @@
 
     <div id="chat"></div>
 
-    <!-- typing indicator -->
     <div id="typing" style="display:none; font-style:italic; color:#666;">
       Assistant is typing...
+    </div>
+
+    <div class="suggestions">
+      <button onclick="quickAsk('What skills do you have?')">Skills</button>
+      <button onclick="quickAsk('What tools do you use?')">Tools</button>
+      <button onclick="quickAsk('How much experience do you have?')">Experience</button>
     </div>
 
     <input
@@ -23,14 +28,11 @@
       placeholder="Type your message..."
     />
 
-    <!-- IMPORTANT: type="button" -->
     <button id="sendBtn" type="button">Send</button>
   </div>
 
-  <!-- IMPORTANT: script sa pinakababa -->
   <script src="script.js"></script>
 
-  <!-- ENTER KEY SUPPORT -->
   <script>
     document.getElementById("userInput").addEventListener("keydown", function(e) {
       if (e.key === "Enter") {
