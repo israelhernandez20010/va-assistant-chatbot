@@ -1,4 +1,4 @@
-const WORKER_URL = "https://tight-lake-94ec.israelhernandez20010.workers.dev";
+const API_URL = "https://va-chatbot-backend.vercel.app/api/chat";
 
 const SYSTEM_PROMPT = `
 You are a friendly, professional virtual assistant chatbot.
@@ -75,3 +75,4 @@ function addMessage(text, className) {
   chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
 }
+
