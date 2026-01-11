@@ -2,60 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>VA Assistant Chatbot</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-    }
-    .chatbox {
-      width: 400px;
-      margin: 50px auto;
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-    }
-    #chat {
-      height: 250px;
-      border: 1px solid #ccc;
-      padding: 10px;
-      overflow-y: auto;
-      margin-bottom: 10px;
-    }
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 6px;
-    }
-    button {
-      width: 100%;
-      padding: 8px;
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .message {
-      margin: 5px 0;
-    }
-  </style>
+  <title>VA Chatbot</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="chatbox">
-    <h3>VA Assistant</h3>
+    <h2>VA Assistant</h2>
 
     <div id="chat"></div>
 
-    <!-- 👇 ITO ANG KULANG MO KANINA -->
-    <input id="userInput" placeholder="Type your message..." />
+    <input
+      id="userInput"
+      type="text"
+      placeholder="Type your message..."
+    />
 
-    <!-- 👇 ITO ANG BUTTON NA TATAWAG SA JS -->
-    <button onclick="sendMessage()">Send</button>
+    <button id="sendBtn">Send</button>
   </div>
 
-  <!-- 👇 SIGURADUHIN NA TAMA ANG FILE NAME -->
+  <!-- IMPORTANT: script sa pinakababa -->
   <script src="script.js"></script>
 </body>
 </html>
