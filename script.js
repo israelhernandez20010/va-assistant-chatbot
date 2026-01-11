@@ -34,37 +34,51 @@ async function sendMessage() {
 
   typing.style.display = "block";
 
-  const response = await fetch(WORKER_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: userText }
-      ],
-      temperature: 0
-    })
-  });
+  try {
+    console.log("Sending request to Worker...");
 
-  const data = await response.json();
-  typing.style.display = "none";
-  typeWriterEffect(data.choices[0].message.content, chat);
-}
+    const response = await fetch(WORKER_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          { role: "system", content: SYSTEM_PROMPT },
+          { role: "user", content: userText }
+        ],
+        temperature: 0
+      })
+    });
 
-function typeWriterEffect(text, chat) {
-  let i = 0;
-  const msgDiv = document.createElement("div");
-  msgDiv.className = "message assistant";
-  msgDiv.textContent = "Assistant: ";
-  chat.appendChild(msgDiv);
+    console.log("Response received:", response);
 
-  const interval = setInterval(() => {
-    msgDiv.textContent += text.charAt(i);
-    i++;
-    chat.scrollTop = chat.scrollHeight;
-    if (i >= text.length) clearInterval(interval);
-  }, 25);
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`HTTP ${response.status}: ${text}`);
+    }
+
+    const data = await response.json();
+    console.log("Response JSON:", data);
+
+    typing.style.display = "none";
+
+    if (!data.choices || !data.choices[0]) {
+      throw new Error("Invalid OpenAI response structure");
+    }
+
+    typeWriterEffect(data.choices[0].message.content, chat);
+
+  } catch (err) {
+    typing.style.display = "none";
+
+    console.error("Chatbot error:", err);
+
+    chat.innerHTML += `
+      <div class="message assistant" style="color:red;">
+        ❌ Error: ${err.message}
+      </div>
+    `;
+  }
 }
