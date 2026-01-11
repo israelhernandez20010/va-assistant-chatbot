@@ -3,23 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <title>VA Assistant Chatbot</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+    }
+    .chatbox {
+      width: 400px;
+      margin: 50px auto;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    #chat {
+      height: 250px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .message {
+      margin: 5px 0;
+    }
+  </style>
 </head>
 <body>
 
-<div class="chatbox">
-  <h2>Ask My VA Assistant</h2>
+  <div class="chatbox">
+    <h3>VA Assistant</h3>
 
-  <div id="chat"></div>
+    <div id="chat"></div>
 
-  <div id="typing" class="typing" style="display:none;">
-    Assistant is typing<span>.</span><span>.</span><span>.</span>
+    <!-- 👇 ITO ANG KULANG MO KANINA -->
+    <input id="userInput" placeholder="Type your message..." />
+
+    <!-- 👇 ITO ANG BUTTON NA TATAWAG SA JS -->
+    <button onclick="sendMessage()">Send</button>
   </div>
 
-  <input id="userInput" placeholder="Ask about my skills, experience, tools..." />
-  <button onclick="sendMessage()">Send</button>
-</div>
-
-<script src="script.js"></script>
+  <!-- 👇 SIGURADUHIN NA TAMA ANG FILE NAME -->
+  <script src="script.js"></script>
 </body>
 </html>
