@@ -1,12 +1,11 @@
 const WORKER_URL = "https://tight-lake-94ec.israelhernandez20010.workers.dev";
 
 const SYSTEM_PROMPT = `
-You are a professional virtual assistant chatbot.
+You are a friendly, professional virtual assistant chatbot.
 
-Rules:
-- Only answer questions based on the VA profile below.
-- If unrelated, say:
-"I can only answer questions about my VA profile."
+Your tone is warm and polite.
+Only answer questions related to the VA profile below.
+If unrelated, politely guide the user back.
 
 VA Profile:
 Name: El Pogi
@@ -21,16 +20,30 @@ Availability: 40 hours/week
 const chat = document.getElementById("chat");
 const input = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
+const typing = document.getElementById("typing");
 
 sendBtn.addEventListener("click", sendMessage);
+
+// Welcome message
+document.addEventListener("DOMContentLoaded", () => {
+  addMessage(
+    "Hi! 👋 I’m a virtual assistant. You can ask me about my skills, tools, or experience.",
+    "bot"
+  );
+});
+
+function quickAsk(text) {
+  input.value = text;
+  sendMessage();
+}
 
 async function sendMessage() {
   const text = input.value.trim();
   if (!text) return;
 
   input.value = "";
-  chat.innerHTML += `<div class="message user">You: ${text}</div>`;
-  chat.scrollTop = chat.scrollHeight;
+  addMessage(`You: ${text}`, "user");
+  typing.style.display = "block";
 
   try {
     const res = await fetch(WORKER_URL, {
@@ -45,11 +58,20 @@ async function sendMessage() {
     });
 
     const data = await res.json();
+    typing.style.display = "none";
 
-    chat.innerHTML += `<div class="message bot">Bot: ${data.reply}</div>`;
-    chat.scrollTop = chat.scrollHeight;
+    addMessage(`Bot: ${data.reply}`, "bot");
 
   } catch (err) {
-    chat.innerHTML += `<div class="message bot">❌ Connection error</div>`;
+    typing.style.display = "none";
+    addMessage("❌ Connection error", "bot");
   }
+}
+
+function addMessage(text, className) {
+  const div = document.createElement("div");
+  div.className = `message ${className}`;
+  div.textContent = text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
 }
