@@ -24,28 +24,26 @@ const typing = document.getElementById("typing");
 
 sendBtn.addEventListener("click", sendMessage);
 
-/* ✅ AUTO WELCOME MESSAGE */
-window.onload = () => {
-  typeWriter(
+/* ✅ AUTO WELCOME MESSAGE – SAFE VERSION */
+document.addEventListener("DOMContentLoaded", () => {
+  addMessage(
     "Hi! 👋 I’m a virtual assistant. You can ask me about my skills, tools, or experience.",
     "bot"
   );
-};
+});
 
-/* ✅ QUICK QUESTION BUTTONS */
+/* ✅ QUICK ASK */
 function quickAsk(text) {
   input.value = text;
   sendMessage();
 }
 
-/* ✅ MAIN SEND FUNCTION */
 async function sendMessage() {
   const text = input.value.trim();
   if (!text) return;
 
   input.value = "";
   addMessage(`You: ${text}`, "user");
-
   typing.style.display = "block";
 
   try {
@@ -65,7 +63,7 @@ async function sendMessage() {
 
     typeWriter(`Bot: ${data.reply}`, "bot");
 
-  } catch {
+  } catch (err) {
     typing.style.display = "none";
     addMessage("❌ Connection error", "bot");
   }
@@ -88,7 +86,6 @@ function typeWriter(text, className) {
   }, speed);
 }
 
-/* HELPER */
 function addMessage(text, className) {
   const div = document.createElement("div");
   div.className = `message ${className}`;
@@ -96,5 +93,3 @@ function addMessage(text, className) {
   chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
 }
-
-
