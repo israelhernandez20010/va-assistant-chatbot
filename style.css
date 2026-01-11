@@ -16,7 +16,7 @@ body {
   border: 1px solid #ccc;
   padding: 10px;
   overflow-y: auto;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .message {
@@ -45,4 +45,17 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.suggestions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.suggestions button {
+  flex: 1;
+  font-size: 12px;
+  background: #e5e7eb;
+  color: #111;
 }
