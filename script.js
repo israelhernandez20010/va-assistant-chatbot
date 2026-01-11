@@ -61,7 +61,12 @@ async function sendMessage() {
     const data = await res.json();
     typing.style.display = "none";
 
-    typeWriter(`Bot: ${data.reply}`, "bot");
+    if (!data.reply) {
+  addMessage("Bot: (No response received)", "bot");
+} else {
+  typeWriter(`Bot: ${data.reply}`, "bot");
+}
+
 
   } catch (err) {
     typing.style.display = "none";
@@ -93,3 +98,4 @@ function addMessage(text, className) {
   chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
 }
+
