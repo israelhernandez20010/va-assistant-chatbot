@@ -1,4 +1,4 @@
-const WORKER_URL = "https://YOUR-WORKER-NAME.workers.dev";
+const WORKER_URL = "https://tight-lake-94ec.israelhernandez20010.workers.dev";
 
 const SYSTEM_PROMPT = `
 You are a friendly, professional virtual assistant chatbot.
@@ -96,3 +96,4 @@ function addMessage(text, className) {
   chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
 }
+
