@@ -2,8 +2,11 @@ const WORKER_URL = "https://tight-lake-94ec.israelhernandez20010.workers.dev";
 
 const SYSTEM_PROMPT = `
 You are a professional virtual assistant chatbot.
-Only answer questions about the VA profile.
-If unrelated, say: "I can only answer questions about my VA profile."
+
+Rules:
+- Only answer questions based on the VA profile below.
+- If unrelated, say:
+"I can only answer questions about my VA profile."
 
 VA Profile:
 Name: El Pogi
@@ -26,40 +29,27 @@ async function sendMessage() {
   if (!text) return;
 
   input.value = "";
-
   chat.innerHTML += `<div class="message user">You: ${text}</div>`;
   chat.scrollTop = chat.scrollHeight;
 
   try {
-    const response = await fetch(WORKER_URL, {
+    const res = await fetch(WORKER_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        input: [
-          {
-            role: "system",
-            content: [{ type: "text", text: SYSTEM_PROMPT }]
-          },
-          {
-            role: "user",
-            content: [{ type: "text", text }]
-          }
+        messages: [
+          { role: "system", content: SYSTEM_PROMPT },
+          { role: "user", content: text }
         ]
       })
     });
 
-    if (!response.ok) {
-      throw new Error("Server error");
-    }
-
-    const data = await response.json();
+    const data = await res.json();
 
     chat.innerHTML += `<div class="message bot">Bot: ${data.reply}</div>`;
     chat.scrollTop = chat.scrollHeight;
 
   } catch (err) {
-    chat.innerHTML += `<div class="message bot">❌ Error connecting to server</div>`;
+    chat.innerHTML += `<div class="message bot">❌ Connection error</div>`;
   }
 }
