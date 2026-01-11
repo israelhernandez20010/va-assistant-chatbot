@@ -64,8 +64,17 @@ async function sendMessage() {
     if (!data.reply) {
   addMessage("Bot: (No response received)", "bot");
 } else {
-  typeWriter(`Bot: ${data.reply}`, "bot");
+  // SAFETY CHECK – show raw reply first
+if (typeof data.reply !== "string" || data.reply.trim() === "") {
+  addMessage("Bot: (No reply received)", "bot");
+} else {
+  // show instantly (stable)
+  addMessage(`Bot: ${data.reply}`, "bot");
+
+  // OPTIONAL: comment this out if you want zero typing effect
+  // typeWriter(`Bot: ${data.reply}`, "bot");
 }
+
 
 
   } catch (err) {
@@ -98,4 +107,5 @@ function addMessage(text, className) {
   chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
 }
+
 
