@@ -97,3 +97,4 @@ function addMessage(text, className) {
   chat.scrollTop = chat.scrollHeight;
 }
 
+
