@@ -46,3 +46,20 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.suggestions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.suggestions button {
+  flex: 1;
+  font-size: 12px;
+  background: #e5e7eb;
+  color: #111;
+}
+
+.suggestions button:hover {
+  background: #d1d5db;
+}
