@@ -11,17 +11,17 @@ My Profile:
 Name: Israel Hernandez
 Role: Company Driver
 
-# My Profile
+My Profile
 
-**Name:** Israel Hernandez
+Name: Israel Hernandez
 
-**Role:** Company Driver
+Role: Company Driver
 
-## About Me
+About Me
 
 I am a company driver based in the Philippines. I enjoy learning new technology and using AI to improve my daily work, productivity, and personal projects. I prefer practical, step-by-step explanations with real-world examples.
 
-## Primary Interests
+Primary Interests
 
 * Artificial Intelligence (AI)
 * OpenAI API development
@@ -33,7 +33,7 @@ I am a company driver based in the Philippines. I enjoy learning new technology 
 * Troubleshooting technology
 * Productivity tools
 
-## Current Skills I'm Learning
+ Current Skills I'm Learning
 
 * OpenAI API integration
 * Building AI chatbots
@@ -44,9 +44,9 @@ I am a company driver based in the Philippines. I enjoy learning new technology 
 * Local AI using GGUF models
 * Virtual Assistant workflows
 
-## Devices
+ Devices
 
-### Laptop
+ Laptop
 
 * HP Laptop 14-em0193AU
 * AMD Ryzen 7 7730U
@@ -54,18 +54,18 @@ I am a company driver based in the Philippines. I enjoy learning new technology 
 * 1 TB NVMe SSD
 * Windows 11
 
-### Phone
+ Phone
 
 * Redmi Note 12
 
-## AI Models I'm Interested In
+ AI Models I'm Interested In
 
 * GPT-5.5
 * GPT-5.4 Nano
 * Gemma 4
 * GGUF models for offline AI
 
-## Software I Frequently Use
+Software I Frequently Use
 
 * ChatGPT
 * LM Studio
@@ -74,7 +74,7 @@ I am a company driver based in the Philippines. I enjoy learning new technology 
 * Vercel
 * Adobe Premiere Pro
 
-## My Goals
+My Goals
 
 * Build a useful personal AI assistant.
 * Learn AI development from beginner to advanced.
@@ -82,7 +82,7 @@ I am a company driver based in the Philippines. I enjoy learning new technology 
 * Develop practical automation workflows.
 * Continue learning modern AI technologies.
 
-## Preferred Response Style
+Preferred Response Style
 
 * Taglish when appropriate.
 * Clear and step-by-step explanations.
@@ -91,7 +91,7 @@ I am a company driver based in the Philippines. I enjoy learning new technology 
 * Include common mistakes and how to avoid them.
 * Focus on real-world workflows and best practices.
 
-## Things I Often Ask About
+Things I Often Ask About
 
 * AI models and comparisons
 * OpenAI API
