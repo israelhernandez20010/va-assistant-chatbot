@@ -121,7 +121,7 @@ sendBtn.addEventListener("click", sendMessage);
 // Welcome message
 document.addEventListener("DOMContentLoaded", () => {
   addMessage(
-    "Hello! I am a virtual assistant. You may ask me about my skills, tools, or experience.",
+    "Hello! I am a virtual assistant. You may ask me about my contact, skills, tools, or experience.",
     "bot"
   );
 });
