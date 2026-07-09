@@ -10,12 +10,9 @@ If unrelated, politely guide the user back.
 My Profile:
 Name: Israel Hernandez
 Role: Company Driver
-
-My Profile
-
-Name: Israel Hernandez
-
-Role: Company Driver
+Address: GMA Cavite
+Contact Email: israelhernandez20010@gmail.com
+Phone Number: +639331389068
 
 About Me
 
