@@ -159,6 +159,11 @@ async function sendMessage() {
   }
 }
 
+function quickAsk(question){
+    input.value = question;
+    sendMessage();
+}
+
 function addMessage(text, className) {
   const div = document.createElement("div");
   div.className = `message ${className}`;
