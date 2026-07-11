@@ -9,6 +9,12 @@ justify-content:center;
 align-items:center;
 padding:20px;
 }
+.chat-header{
+padding:18px 20px;
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+display:flex;
+align-items:center;
+}
 .chatbox{
 width:100%;
 max-width:460px;
@@ -33,8 +39,8 @@ letter-spacing:.5px;
 #chat{
 flex:1;
 overflow-y:auto;
-padding:16px;
-background:#f8fafc;
+padding:20px;
+background:#f4f7fb;
 }
 .message{
 padding:12px 14px;
@@ -42,7 +48,7 @@ margin:10px 0;
 border-radius:16px;
 line-height:1.5;
 word-break:break-word;
-max-width:88%;
+max-width:75%;
 animation:fade .2s ease;
 }
 .user{
@@ -65,21 +71,24 @@ font-size:13px;
 }
 .suggestions{
 display:flex;
-gap:8px;
-padding:12px;
-overflow-x:auto;
-background:#fff;
+flex-wrap:wrap;
+gap:10px;
+padding:15px;
+background:white;
+border-top:1px solid #eee;
 }
 .suggestions button{
-white-space:nowrap;
-background:#eef2ff;
-color:#1e3a8a;
 border:none;
-padding:10px 14px;
+background:#eef2ff;
+padding:10px 16px;
 border-radius:999px;
 cursor:pointer;
 font-weight:600;
-transition:.2s;
+transition:.25s;
+}
+.suggestions button:hover{
+background:#2563eb;
+color:white;
 }
 .suggestions button:hover{background:#dbeafe}
 .input-area{
@@ -89,26 +98,41 @@ padding:14px;
 background:#fff;
 border-top:1px solid #e5e7eb;
 }
+.input-area{
+display:flex;
+align-items:center;
+gap:10px;
+padding:15px;
+background:white;
+border-top:1px solid #eee;
+}
 .input-area input{
 flex:1;
-border:1px solid #d1d5db;
-border-radius:999px;
 padding:14px 18px;
+border-radius:999px;
+border:1px solid #ddd;
 font-size:16px;
 outline:none;
+transition:.25s;
 }
 .input-area input:focus{
 border-color:#2563eb;
-box-shadow:0 0 0 3px rgba(37,99,235,.15);
+box-shadow:0 0 0 4px rgba(37,99,235,.15);
 }
 #sendBtn{
+width:55px;
+height:55px;
 border:none;
-border-radius:999px;
-padding:14px 22px;
+border-radius:50%;
 background:linear-gradient(135deg,#2563eb,#4f46e5);
 color:white;
-font-weight:bold;
+font-size:22px;
 cursor:pointer;
+transition:.25s;
+box-shadow:0 6px 18px rgba(37,99,235,.35);
+}
+#sendBtn:hover{
+transform:scale(1.05);
 }
 #sendBtn:hover{opacity:.95}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
