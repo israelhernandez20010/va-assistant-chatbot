@@ -173,7 +173,7 @@ input.addEventListener("input", () => {
 function addMessage(text, className) {
   const div = document.createElement("div");
   div.className = `message ${className}`;
-  div.textContent = text;
+  div.innerHTML = marked.parse(text);
   chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
 }
