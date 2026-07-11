@@ -133,7 +133,7 @@ async function sendMessage() {
   if (!text) return;
 
   input.value = "";
-  addMessage(`You: ${text}`, "user");
+  addMessage(text,"user");
   typing.style.display = "block";
 
   try {
@@ -151,7 +151,7 @@ async function sendMessage() {
     const data = await res.json();
     typing.style.display = "none";
 
-    addMessage(`Bot: ${data.reply}`, "bot");
+    addMessage(data.reply,"bot");
 
   } catch (err) {
     typing.style.display = "none";
