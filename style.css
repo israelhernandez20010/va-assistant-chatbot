@@ -56,6 +56,11 @@ input {
     flex:none;
 }
 
+#sendBtn:disabled{
+opacity:.4;
+cursor:not-allowed;
+}
+
 .suggestions {
   display: flex;
   gap: 6px;
