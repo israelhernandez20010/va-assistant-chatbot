@@ -37,14 +37,23 @@ input {
   margin-bottom: 8px;
 }
 
-button {
-  width: 100%;
-  padding: 8px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.input-area{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+#userInput{
+    flex:1;
+    padding:12px;
+}
+
+#sendBtn{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    font-size:22px;
+    flex:none;
 }
 
 .suggestions {
