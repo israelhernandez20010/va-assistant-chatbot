@@ -164,6 +164,12 @@ function quickAsk(question){
     sendMessage();
 }
 
+input.addEventListener("input", () => {
+
+    sendBtn.disabled = input.value.trim()==="";
+
+});
+
 function addMessage(text, className) {
   const div = document.createElement("div");
   div.className = `message ${className}`;
