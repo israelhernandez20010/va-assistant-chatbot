@@ -110,7 +110,7 @@ Tools: Google Workspace, Trello, Canva
 Timezone: GMT+8
 Availability: 40 hours/week
 
-exclude "*" on chat
+exclude "*" or "**"on chat, always make in clean.
 `;
 
 const chat = document.getElementById("chat");
