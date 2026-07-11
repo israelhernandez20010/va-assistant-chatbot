@@ -19,18 +19,25 @@ body {
   margin-bottom: 8px;
 }
 
-.message {
-  margin-bottom: 6px;
+.message{
+    max-width:80%;
+    padding:10px 14px;
+    margin:8px;
+    border-radius:18px;
+    word-wrap:break-word;
 }
 
-.user {
-  font-weight: bold;
+.user{
+    margin-left:auto;
+    background:#2563eb;
+    color:white;
 }
 
-.bot {
-  color: #2563eb;
+.bot{
+    margin-right:auto;
+    background:#ececec;
+    color:#111;
 }
-
 input {
   width: 100%;
   padding: 8px;
