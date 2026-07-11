@@ -4,33 +4,109 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VA Assistant</title>
-<link rel="stylesheet" href="style_premium.css">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-<div class="chatbox">
-<h2>🤖 VA Assistant</h2>
 
-<div id="chat"></div>
+<div class="chat-container">
 
-<div id="typing" style="display:none;">Assistant is typing...</div>
+    <div class="chat-header">
 
-<div class="suggestions">
-<button onclick="quickAsk('What skills do you have?')">💼 Skills</button>
-<button onclick="quickAsk('What tools do you use?')">🛠 Tools</button>
-<button onclick="quickAsk('How much experience do you have?')">⭐ Experience</button>
+        <div class="bot-info">
+
+            <div class="avatar">
+                🤖
+            </div>
+
+            <div>
+
+                <h2>VA Assistant</h2>
+
+                <span>Online</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="chat"></div>
+
+
+    <div id="typing" class="typing" style="display:none;">
+
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+    </div>
+
+
+    <div class="suggestions">
+
+        <button onclick="quickAsk('What skills do you have?')">
+            💼 Skills
+        </button>
+
+        <button onclick="quickAsk('What tools do you use?')">
+            🛠 Tools
+        </button>
+
+        <button onclick="quickAsk('How much experience do you have?')">
+            ⭐ Experience
+        </button>
+
+        <button onclick="quickAsk('How can I contact you?')">
+            📞 Contact
+        </button>
+
+    </div>
+
+
+    <div class="input-area">
+
+        <input
+            id="userInput"
+            placeholder="Message VA Assistant..."
+            autocomplete="off"
+        >
+
+        <button id="sendBtn">
+
+            ➤
+
+        </button>
+
+    </div>
+
 </div>
 
-<div class="input-area">
-<input id="userInput" type="text" placeholder="Ask me anything..." autocomplete="off">
-<button id="sendBtn">Send</button>
-</div>
-
-</div>
 <script src="script.js"></script>
+
 <script>
-document.getElementById("userInput").addEventListener("keydown",e=>{
-if(e.key==="Enter")document.getElementById("sendBtn").click();
+
+document
+.getElementById("userInput")
+.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"&&!e.shiftKey){
+
+e.preventDefault();
+
+document.getElementById("sendBtn").click();
+
+}
+
 });
+
 </script>
+
 </body>
 </html>
